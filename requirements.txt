@@ -2,3 +2,5 @@ fastapi
 uvicorn 
 gunicorn 
 tensorflow-cpu
+nltk==3.8.1
+unidecode 

@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from keras.models import load_model
+import tensorflow as tf
+
 # Create the FastAPI app
 app = FastAPI()
 

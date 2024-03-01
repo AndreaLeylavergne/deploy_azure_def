@@ -35,7 +35,14 @@ async def lifespan(app: FastAPI):
 
 
 # Create the FastAPI app
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
+
+# Charger le tokenizer
+with open('tokenizer.pickle', 'rb') as handle:
+    tokenizer = pickle.load(handle)
+
+# Padding des séquences pour avoir la même longueur
+max_length = 40
 
 @app.get("/")
 async def read_root():

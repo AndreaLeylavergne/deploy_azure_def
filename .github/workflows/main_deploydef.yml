@@ -32,10 +32,6 @@ jobs:
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
       # Etape pour exécuter les tests unitaires
-      - name: Run unit tests
-        run: |
-          source venv/bin/activate
-          pytest
 
       - name: Test with pytest
         run: |

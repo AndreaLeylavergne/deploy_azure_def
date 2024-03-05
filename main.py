@@ -53,7 +53,7 @@ class InputData(BaseModel):
     text: str
 
 @app.post("/predict")
-def predict_sentiment(input_data: InputData):
+async def predict_sentiment(input_data: InputData):
     text = input_data.text
     text_data = transformer_texte_en_sequence([text], tokenizer, max_length)
     sentiment_pred = model.predict(text_data)
@@ -62,10 +62,9 @@ def predict_sentiment(input_data: InputData):
 
     return {"sentiment": sentiment_label, "score": float(sentiment_score)}
 
-
 @app.get("/")
 async def read_root():
-    return {"message": " Hello, beautifull World 3.11"}
+    return {"message": " Hello, World 3.11"}
 
 
 
